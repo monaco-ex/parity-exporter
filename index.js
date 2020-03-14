@@ -129,7 +129,7 @@ function initParityMetrics (registry, nodeURL) {
 
       gauges.latest.sync.set({ type: 'current' }, current)
       gauges.latest.sync.set({ type: 'highest' }, highest)
-      gauges.latest.sync.set({ type: 'progress' }, parseFloat((current / highest).toFixed(5)))
+      gauges.latest.sync.set({ type: 'progress' }, highest === 0 ? 0 : parseFloat((current / highest).toFixed(5)))
     }
 
     // gas price
